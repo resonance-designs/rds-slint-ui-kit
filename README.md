@@ -1,6 +1,6 @@
 # Resonance Designs – Slint UI Component Kit
 
-![0.1.0](https://img.shields.io)
+![Static Badge](https://img.shields.io/badge/Version-0.1.0-orange)
 
 A reusable collection of Slint UI components designed for audio tools, sequencers, and creative applications.
 
