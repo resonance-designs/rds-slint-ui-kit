@@ -100,8 +100,6 @@ A rotary knob supporting bounded and infinite rotation modes.
 - **Bounded mode:** `min-value != max-value`
 - **Infinite mode:** `min-value == max-value`
 
----
-
 ## Example Usage
 
 ``` slint
@@ -124,8 +122,6 @@ RDSVUMeter {
 }
 ```
 
----
-
 ## Installation (Planned)
 
 This library is intended to be distributed via:
@@ -134,8 +130,6 @@ This library is intended to be distributed via:
 - Cargo (for Rust + Slint projects)
 
 See roadmap below.
-
----
 
 ## Roadmap
 
