@@ -1,6 +1,6 @@
 # Resonance Designs – Slint UI Component Kit
 
-![Static Badge](https://img.shields.io/badge/Version-0.1.4-orange)
+![Static Badge](https://img.shields.io/badge/Version-0.1.5-orange)
 
 A reusable collection of Slint UI components designed for audio tools, sequencers, and creative applications.
 
@@ -89,6 +89,24 @@ A rotary knob supporting bounded and infinite rotation modes.
 
 ---
 
+### `RDSSlider`
+
+A versatile slider (fader) supporting vertical and horizontal orientations.
+
+**[Properties]**
+
+- `value: float`
+- `min-value: float`
+- `max-value: float`
+- `size: string` ("small", "medium", "large")
+- `orientation: string` ("vertical", "horizontal")
+
+**[Callbacks]**
+
+- `value-changed(float)`
+
+---
+
 ## Theming
 
 The library features a centralized theming system using a global `Theme` and `RDSTheme` struct.
@@ -159,7 +177,7 @@ VerticalLayout {
     }
 
     Button {
-        text: "Toggle Theme";
+        text: "Switch to Light Mode";
         clicked => { ThemeManager.switch_to_light(); }
     }
 }
@@ -174,11 +192,12 @@ This library is intended to be distributed via:
 
 ## Roadmap
 
-- [ ] npm package with .slint exports
-- [ ] Rust crate wrapping Slint resources
+- [x] npm package with .slint exports
+- [x] Rust crate wrapping Slint resources
 - [x] Theming support
-- [ ] Additional audio UI components
+- [ ] Additional UI components
 - [ ] Documentation site & screenshots
+- [ ] Demo application using the UI library
 
 ## License
 
