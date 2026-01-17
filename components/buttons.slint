@@ -23,6 +23,8 @@ export component RDSSelectButton {
         }
 
         TouchArea {
+            width: parent.width;
+            height: parent.height;
             clicked => root.clicked();
         }
     }
@@ -46,6 +48,8 @@ export component RDSSequencerCell {
         border-width: 1px;
 
         TouchArea {
+            width: parent.width;
+            height: parent.height;
             clicked => root.clicked();
         }
     }

@@ -1,6 +1,7 @@
 export component RDSVUMeter {
     in property <float> level;
     in property <color> fill-color: #00ff00;
+    property <float> clamped-level: Math.max(0.0, Math.min(1.0, root.level));
 
     width: 140px;
     height: 10px;
@@ -14,7 +15,7 @@ export component RDSVUMeter {
         border-width: 1px;
 
         Rectangle {
-            width: Math.max(4px, root.level * parent.width);
+            width: Math.max(4px, root.clamped-level * parent.width);
             height: parent.height;
             background: root.fill-color;
             border-radius: 4px;
@@ -25,6 +26,7 @@ export component RDSVUMeter {
 export component RDSVertVUMeter {
     in property <float> level;
     in property <color> fill-color: #00ff00;
+    property <float> clamped-level: Math.max(0.0, Math.min(1.0, root.level));
 
     width: 12px;
     height: 88px;
@@ -39,7 +41,7 @@ export component RDSVertVUMeter {
 
         Rectangle {
             width: parent.width;
-            height: Math.max(2px, root.level * parent.height);
+            height: Math.max(2px, root.clamped-level * parent.height);
             y: parent.height - self.height;
             background: root.fill-color;
             border-radius: 4px;

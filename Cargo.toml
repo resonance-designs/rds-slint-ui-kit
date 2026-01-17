@@ -1,8 +1,8 @@
 [package]
 name = "rds-slint-ui-kit"
-version = "0.1.2"
+version = "0.1.3"
 readme = "README.md"
-repository = "https://github.com/resonance-designs/rds-ui"
+repository = "https://github.com/resonance-designs/rds-slint-ui-kit"
 categories = ["gui"]
 keywords = ["slint", "ui", "audio"]
 edition = "2021"
