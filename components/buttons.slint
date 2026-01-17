@@ -9,12 +9,26 @@ export component RDSSelectButton {
     height: 28px;
 
     Rectangle {
-        width: parent.width;
-        height: parent.height;
-        background: root.active ? Theme.active.accent_secondary : Theme.active.background_main;
+        width: 80px;
+        height: 28px;
+        x: (parent.width - self.width) / 2;
+        y: (parent.height - self.height) / 2;
         border-radius: Theme.active.radius_large;
-        border-color: root.active ? Theme.active.accent_highlight : Theme.active.border_subtle;
+        border-color: @linear-gradient(180deg, #242424 0%, #161616 100%);
         border-width: 1px;
+        drop-shadow-blur: root.active ? 8px : 8px;
+        drop-shadow-offset-y: root.active ? 2px : 6px;
+        drop-shadow-color: #000;
+
+        // Inner background rectangle to prevent bleed, inset by border width
+        Rectangle {
+            x: 1px;
+            y: 1px;
+            width: parent.width - 4px;
+            height: parent.height - 4px;
+            background: root.active ? Theme.active.accent_secondary : Theme.active.background_main;
+            border-radius: Theme.active.radius_large - 3px;
+        }
 
         Text {
             text: root.label;
@@ -30,7 +44,6 @@ export component RDSSelectButton {
             clicked => root.clicked();
         }
     }
-
 }
 
 export component RDSSequencerCell {
