@@ -1,6 +1,6 @@
 # Resonance Designs – Slint UI Component Kit
 
-![Static Badge](https://img.shields.io/badge/Version-0.1.5-orange)
+![Static Badge](https://img.shields.io/badge/Version-0.1.7-orange)
 
 A reusable collection of Slint UI components designed for audio tools, sequencers, and creative applications.
 
@@ -80,6 +80,9 @@ A rotary knob supporting bounded and infinite rotation modes.
 - `indicator-position: length`
 - `sensitivity: float`
 - `scroll-sensitivity: float`
+- `renderer: string` ("hi-fi", "lo-fi")
+- `indicator: string` ("circle", "line", "caret")
+- `indicator-color: color`
 - `min-value: float`
 - `max-value: float`
 
@@ -100,10 +103,54 @@ A versatile slider (fader) supporting vertical and horizontal orientations.
 - `max-value: float`
 - `size: string` ("small", "medium", "large")
 - `orientation: string` ("vertical", "horizontal")
+- `height-override: length`
 
 **[Callbacks]**
 
 - `value-changed(float)`
+
+---
+
+### `RDSWaveformViz`
+
+Visualizes a static waveform with an optional playhead.
+
+**[Properties]**
+
+- `waveform: [float]` (Amplitude values 0.0 – 1.0)
+- `waveform_time_labels: [string]` (Time markers for X-axis)
+- `playhead-index: int` (Current position in waveform array)
+
+---
+
+### `RDSOscilloscopeViz`
+
+Visualizes a real-time signal as an oscilloscope trace.
+
+**[Properties]**
+
+- `oscilloscope: [float]` (Signal samples)
+
+---
+
+### `RDSSpectrumViz`
+
+Visualizes frequency spectrum data as vertical bars.
+
+**[Properties]**
+
+- `spectrum: [float]` (Magnitude values per frequency bin)
+
+---
+
+### `RDSVectorscopeViz`
+
+Visualizes phase relationship between two signals (L/R).
+
+**[Properties]**
+
+- `vectorscope_x: [float]` (Left channel signal samples)
+- `vectorscope_y: [float]` (Right channel signal samples)
 
 ---
 
@@ -203,4 +250,4 @@ This library is intended to be distributed via:
 
 Copyright © 2026
 [Richard Bakos](mailto:info@resonancedesigns.dev) – [Resonance Designs](https://resonancedesigns.dev)
-[MIT](LICENSE.txt)
+[MIT](LICENSE)

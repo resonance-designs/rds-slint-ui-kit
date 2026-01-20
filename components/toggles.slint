@@ -1,5 +1,13 @@
 import { Theme } from "../theme/index.slint";
 
+/*
+Component: RDSCircleToggle
+Description: A minimal circular toggle indicator.
+Public members:
+- active: bool - Current toggle state
+- clicked(): callback - Triggered when the toggle is clicked
+*/
+
 export component RDSCircleToggle {
     in property <bool> active;
     callback clicked();
@@ -16,7 +24,7 @@ export component RDSCircleToggle {
         border-radius: 999px;
         border-color: root.active
             ? (ta.pressed ? Theme.active.accent_primary : Theme.active.accent_highlight)
-            : (ta.has-hover ? Theme.active.border_strong : Theme.active.border_strong);
+            : (ta.has-hover ? Theme.active.border_subtle : Theme.active.border_strong);
         border-width: 1px;
 
         ta := TouchArea {
