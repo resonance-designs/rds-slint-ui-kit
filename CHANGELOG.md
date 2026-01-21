@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.1.8] - 2026-01-21
+
+- Added `RDSNumStepper` component in `selectors.slint` with support for:
+  - Dynamic button positioning ("top-bottom" or "left-right").
+  - Toggleable buttons via `button-tog` property.
+  - Interactive readout with vertical drag and mouse scroll support.
+  - Manual value entry via double-click.
+  - Customizable font family and leading zero padding.
+- Added `RDSToggle` component in `toggles.slint` with Material Icons support.
+- Updated `StepperButton` to use Material Icons font for arrows.
+- Exported `RDSNumStepper` and `RDSToggle` in `index.slint`.
+- Updated `README.md` with documentation for new components.
+
 ## [0.1.7] - 2026-01-20
 
 - Added new visualization components: `RDSWaveformViz`, `RDSOscilloscopeViz`, `RDSSpectrumViz`, `RDSVectorscopeViz`.
