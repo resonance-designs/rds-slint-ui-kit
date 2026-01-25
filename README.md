@@ -24,8 +24,8 @@ A standard button component with customizable labeling and styling.
 - `button-width: length` (Default: `42px`)
 - `button-height: length` (Default: `28px`)
 - `text-color: color` (Default: `Theme.active.text_primary`)
-- `background: color` (Default: `Theme.active.background_main`)
-- `border-color: color` (Default: `Theme.active.border_strong`)
+- `background: color` (Default: `root.active ? Theme.active.accent_primary : Theme.active.background_main`)
+- `border-color: color` (Default: `root.active ? Theme.active.accent_primary : Theme.active.border_strong`)
 - `border-radius: length` (Default: `Theme.active.radius_medium`)
 
 **[Callbacks]**
@@ -37,7 +37,7 @@ A standard button component with customizable labeling and styling.
 ```slint
 RDSButton {
     label: "Apply";
-    clicked => { do-something(); }
+    clicked => { do_something(); }
 }
 ```
 
@@ -66,7 +66,7 @@ RDSSelectButton {
     label: "Mute";
     active: is-muted;
     clicked => { is-muted = !is-muted; }
-    shift-clicked => { solo-track(); }
+    shift-clicked => { solo_track(); }
 }
 ```
 
@@ -317,7 +317,7 @@ A numeric selector with increment/decrement buttons and an interactive readout. 
 - `readout-text-color: color`
 - `readout-text-size: length`
 - `readout-text-weight: int`
-- `pad-digits: int` (Default: `3`)
+- `pad-digits: int` (Default: `3`, max: 3)
 - `button-tog: bool` (Default: `true`)
 - `allow-editing: bool` (Default: `true`)
 - `button-pos: string` ("top-bottom", "left-right")
@@ -425,7 +425,7 @@ A virtual musical keyboard (piano keys).
 RDSKeybed {
     octaves: 3;
     base-note: 36;
-    note-triggered(n) => { play-note(n); }
+    note-triggered(n) => { play_note(n); }
 }
 ```
 

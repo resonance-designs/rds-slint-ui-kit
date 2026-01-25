@@ -30,9 +30,9 @@ export component RDSButton {
     in property <bool> active;
     in property <length> button-width: 42px;
     in property <length> button-height: 28px;
-    in property <color> background: Theme.active.background_main;
+    in property <color> background: root.active ? Theme.active.accent_primary : Theme.active.background_main;
     in property <length> border-width: 1px;
-    in property <color> border-color: Theme.active.border_strong;
+    in property <color> border-color: root.active ? Theme.active.accent_primary : Theme.active.border_strong;
     in property <length> border-radius: Theme.active.radius_medium;
     callback clicked();
 
@@ -42,11 +42,13 @@ export component RDSButton {
     Rectangle {
         width: parent.width;
         height: parent.height;
-        background: root.background;
+        background: touch.pressed ? (root.active ? Theme.active.accent_secondary : Theme.active.background_hover) : (touch.has-hover ? Theme.active.background_hover : root.background);
         border-width: root.border-width;
         border-color: root.border-color;
         border-radius: root.border-radius;
         HorizontalLayout {
+            width: parent.width;
+            height: parent.height;
             padding-top: root.label-padding-top;
             padding-right: root.label-padding-right;
             padding-bottom: root.label-padding-bottom;
@@ -58,7 +60,7 @@ export component RDSButton {
                 vertical-alignment: root.vertical-alignment;
             }
         }
-        TouchArea {
+        touch := TouchArea {
             width: parent.width;
             height: parent.height;
             clicked => root.clicked();
